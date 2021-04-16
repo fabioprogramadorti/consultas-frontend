@@ -5,6 +5,7 @@ import { faSave, faTimes } from '@fortawesome/free-solid-svg-icons'
 import { Button, Form, Col } from 'react-bootstrap'
 import { ConsultasContext } from '../pages/state'
 
+
 const initialState = {
   show: false,
   consulta: {
@@ -86,15 +87,21 @@ export default class EditForm extends Component {
                   <Form.Control 
                     required 
                     as="select" 
-                    defaultValue={this.state.medico}
+                    defaultValue={this.state.consulta.medico}
                     onChange={e => this.setState({ consulta: { ...this.state.consulta, medico: e.target.value } }) }
                   >
-                    {this.state.medico ? console.log(this.store.medicos) : ''}
                     <option></option>
+                
                     {
-                      this.store.medicos.map(medico => (
+                      this.props.medicos ?
+                      this.props.medicos.map(medico => (
+                        
                         <option key={medico}>{medico}</option>
-                      ))
+                      )) : 
+                        this.store.medicos.map(medico => (
+
+                          <option key={medico}>{medico}</option>
+                        ))
                     }
                   </Form.Control>
                 </Form.Group>
