@@ -46,9 +46,9 @@ export default class EditForm extends Component {
       this.store.updateConsulta(id, consulta)
     } else {
       this.store.addConsulta(consulta)
+      this.setState(initialState)
     }
     this.handleClose()
-    this.setState(initialState)
 
   }
 

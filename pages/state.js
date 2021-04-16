@@ -40,8 +40,8 @@ export default class MyContext extends Component {
     this.listConsultas()
   }
 
-  addConsulta = (consulta) => {
-    createConsulta(consulta)
+  addConsulta = async (consulta) => {
+    await createConsulta(consulta)
     this.listConsultas()
   }
 

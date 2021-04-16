@@ -9,7 +9,7 @@ import moment from 'moment'
 
 class Home extends Component {
   static contextType = ConsultasContext
-  compo
+
   render() {
     const store = this.context
     return (
