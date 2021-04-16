@@ -12,7 +12,7 @@ const ConsultasContext = React.createContext()
 const ConsultasProvider = ConsultasContext.Provider
 const ConsultasConsumer = ConsultasContext.Consumer
 
-class MyContext extends Component {
+export default class MyContext extends Component {
 
   state = {
     consultas: [],
@@ -68,4 +68,4 @@ class MyContext extends Component {
 }
 
 
-export { ConsultasContext, MyContext, ConsultasConsumer }
+export { ConsultasContext, ConsultasConsumer }
